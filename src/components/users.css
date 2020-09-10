@@ -1,0 +1,8 @@
+ul > li {
+  list-style: none;
+  font-family: Verdana;
+  font-size: 15px;
+  box-shadow: 2px 2px 2px 1px grey;
+  padding: 30px;
+  background-color: rgb(233, 229, 224);
+}
