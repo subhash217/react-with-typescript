@@ -4,17 +4,47 @@ $color: #ddd;
 $text-color: green;
 .wrapper {
   height: 40px;
-  background-color: #232f3e;
-  color: green;
-  border-color: #ddd;
-  border-width: 1px;
-  border-style: solid;
+  background-color: #131921;
   display: flex;
   padding: 8px;
+  font-family: "Amazon Ember", Arial, sans-serif;
+
+  .menu-border {
+    border: 1px solid #666;
+    height: 37px;
+    border-radius: 3px;
+  }
+
+  #input {
+    border: none;
+    height: 37px;
+  }
+
+  .s-button {
+    border: none;
+    padding: 12px;
+    background-color: #febd69;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  .a-button {
+    border: none;
+    padding: 12px;
+    background-color: #f3f3f3;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+}
+.address {
+  background-color: #232f3e;
+  height: 28px;
+  padding: 5px;
 }
 
-.menu-border {
-  border: 1px solid #666;
-  height: 37px;
-  border-radius: 3px;
+.services {
+  color: #ddd;
+  font-family: Arial, sans-serif;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 14px;
 }

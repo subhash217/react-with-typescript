@@ -14,6 +14,15 @@ const Div = styled.div`
 `;
 
 export function AmazonHome() {
+  const [menu, setMenu] = React.useState([
+    "Fresh",
+    "Amazon Pay",
+    "chinni AmazonHome.in",
+    "Mobiles",
+    "Best Sellers",
+    "Todays Deal",
+    "Customer Service",
+  ]);
   return (
     <>
       <div className="wrapper">
@@ -26,10 +35,19 @@ export function AmazonHome() {
         </div>
         <img src={amazon} width="82" height="40" />
         <div>
-          <button>All</button>
-          <input type="text" />
-          <button>S</button>
+          <button className="a-button">All</button>
+          <input type="text" id="input" />
+          <button className="s-button">S</button>
         </div>
+      </div>
+      <div className="address">
+        {menu.map((item, index) => {
+          return (
+            <span className="services" key={index}>
+              {item}
+            </span>
+          );
+        })}
       </div>
     </>
   );
