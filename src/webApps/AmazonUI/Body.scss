@@ -1,8 +1,20 @@
+@import "../../styles.scss";
+
 $color: #ddd;
 $text-color: green;
 .wrapper {
-  color: $text-color;
-  border-color: $color;
+  height: 40px;
+  background-color: #232f3e;
+  color: green;
+  border-color: #ddd;
   border-width: 1px;
   border-style: solid;
+  display: flex;
+  padding: 8px;
+}
+
+.menu-border {
+  border: 1px solid #666;
+  height: 37px;
+  border-radius: 3px;
 }
