@@ -1,6 +1,5 @@
 import React from "react";
-import ClassComp from "./ClassComp";
-import FunComp from "./FunComp";
+import { ClassComp, FunComp } from "./index";
 export default function Parent() {
   return (
     <div style={{ display: "flex", justifyContent: "space-around" }}>

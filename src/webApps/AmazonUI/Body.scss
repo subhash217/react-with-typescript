@@ -1,0 +1,8 @@
+$color: #ddd;
+$text-color: green;
+.wrapper {
+  color: $text-color;
+  border-color: $color;
+  border-width: 1px;
+  border-style: solid;
+}

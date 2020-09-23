@@ -1,0 +1,16 @@
+.user-login:before {
+  content: "\E976";
+}
+
+.login-details {
+  display: flex;
+  padding-top: 16px;
+  justify-content: space-evenly;
+  width: 25%;
+}
+
+.home-details {
+  display: flex;
+  justify-content: space-evenly;
+  width: 28%;
+}

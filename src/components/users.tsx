@@ -35,7 +35,11 @@ const Users: React.FunctionComponent<props> = ({ buttonloading }) => {
       const list = (
         <ul>
           {users.map((user) => {
-            return <li key={user.id}>{user.title}</li>;
+            return (
+              <li className="user-details" key={user.id}>
+                {user.title}
+              </li>
+            );
           })}
         </ul>
       );

@@ -1,0 +1,121 @@
+.navbar-container {
+  display: flex;
+  align-items: center;
+
+  background-color: #24292e;
+  color: hsla(0, 0%, 100%, 0.7);
+  height: 52px;
+}
+.navbar-container .image {
+  width: 4%;
+}
+.search-input {
+  height: 23px;
+  width: 43.7%;
+  margin-top: 11px;
+  border: 0;
+  font-size: inherit;
+  font-family: inherit;
+  color: rgb(212, 209, 209);
+  border-radius: 6px;
+  background-color: rgb(66, 61, 61);
+}
+.navbar-container .content {
+  display: flex;
+  width: 44.4%;
+  justify-content: space-around;
+}
+.content p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}
+p:hover {
+  cursor: pointer;
+}
+.navbar-container .login {
+  display: flex;
+  width: 7%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.empty {
+  width: 42.5%;
+}
+
+img {
+  border-radius: 10px;
+}
+img:hover {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+}
+.octicon {
+  display: none;
+}
+.tab-space {
+  display: none;
+}
+/* desktop (769px) */
+@media only screen and(min-width:769px) {
+  .content p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+      sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  }
+}
+
+.menu-icon {
+  display: none;
+}
+
+.github-image {
+  position: relative;
+}
+
+/* Tab view (426px to 768px) */
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  .navbar-container .content {
+    display: none;
+  }
+  .search-input {
+    display: none;
+  }
+  .octicon {
+    display: inline-block;
+  }
+  .navbar-container .image {
+    width: 0px;
+  }
+  .github-image {
+    position: relative;
+    left: 277px;
+  }
+  .menu-icon {
+    display: inline-block;
+  }
+  .tab-space {
+    width: 4%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .content p {
+    display: none;
+  }
+  .search-input {
+    display: none;
+  }
+  .menu-icon {
+    display: inline-block;
+  }
+}

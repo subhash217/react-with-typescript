@@ -1,20 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
-
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { RedbusHome } from "./webApps/RedbusUI/Home";
+import { AmazonHome } from "./webApps/AmazonUI/Body";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-
-interface IPerson {
-  name: string;
-  age: number;
-  company: string;
-}
-
-interface detail {
-  address: string;
-  details?: IPerson;
-}
 
 export const myContext = React.createContext({
   name: "subash",
@@ -23,10 +14,22 @@ export const myContext = React.createContext({
 });
 console.log(myContext);
 console.log(process.env.NODE_ENV);
+
 function initialSetup() {
   return (
     <React.StrictMode>
-      <App name="subash" age={28} />
+      <BrowserRouter>
+        <App name="subash" age={28} />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <h1>No Apps Available please use Nav Menu</h1>}
+          />
+          <Route path="/redbus" component={RedbusHome} />
+          <Route path="/amazon" component={AmazonHome} />
+        </Switch>
+      </BrowserRouter>
     </React.StrictMode>
   );
 }

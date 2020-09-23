@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import { myContext } from "./index";
+import NavBar from "./layouts/navBar";
+import Content from "./content";
 import { Header } from "./header";
 import Users from "./components/users";
 import Parent from "./components/subComponents/Parent";
@@ -11,6 +13,8 @@ interface Props {
 }
 
 const App: React.FunctionComponent<Props> = (props) => {
+  const h1Ref = React.useRef<HTMLHeadingElement>(null);
+  console.log(h1Ref);
   const [details, setDetails] = useState({
     name: "subash",
     age: 28,
@@ -21,13 +25,21 @@ const App: React.FunctionComponent<Props> = (props) => {
   }
   return (
     <div className="App">
-      <myContext.Provider value={details}>
-        <Header heading="Counter with Context API" click={click} />
-        <Users buttonloading />
-        <div style={{ marginTop: "30px" }}>
-          <Parent />
-        </div>
-      </myContext.Provider>
+      <NavBar />
+      <Content>
+        <h1 className="heading" ref={h1Ref}>
+          React App
+        </h1>
+        <button onClick={() => console.log(h1Ref)}>Click</button>
+
+        <myContext.Provider value={details}>
+          <Header heading="Counter with Context API" click={click} />
+          <Users buttonloading />
+          <div style={{ marginTop: "30px" }}>
+            <Parent />
+          </div>
+        </myContext.Provider>
+      </Content>
     </div>
   );
 };

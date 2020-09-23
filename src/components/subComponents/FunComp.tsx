@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useReducer } from "react";
 import { myContext } from "../../index";
 import { counterContext } from "../../header";
 
-export default function FunComp() {
+export function FunComp() {
   const [selectBox, setSelectBox] = useState<string>("");
 
   const handleChange = (event: any) => {

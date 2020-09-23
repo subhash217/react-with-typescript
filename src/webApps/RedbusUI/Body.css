@@ -1,0 +1,46 @@
+main {
+  background-image: url("https://st.redbus.in/Images/INDOFFER/COVID-19/heroimage2.png");
+  background-repeat: round;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  background-size: cover;
+  position: absolute;
+  left: 0px;
+  top: 57px;
+  z-index: -1;
+}
+
+.input-class {
+  padding: 14px;
+  border: 0.1px solid #d1d0d0;
+}
+
+.journey-details {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 30em;
+  box-shadow: 5px 10px #888888;
+}
+
+.search-button {
+  border: none;
+  background-color: #d74f57;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700 !important;
+  height: 46px;
+  width: 144px;
+}
+
+.safety-plus-tile {
+  height: 96px;
+  width: 40%;
+  display: flex;
+  margin-top: 334px;
+  margin-left: 400px;
+  padding: 15px;
+  justify-content: space-around;
+  background-color: #fff5e5;
+}

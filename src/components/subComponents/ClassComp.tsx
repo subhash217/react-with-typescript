@@ -1,62 +1,79 @@
 import React, { Component } from "react";
+import { TodoApp, CheckboxExample } from "./ClassComponents/index";
+import { selectState } from "../../models/select";
 
-type selesctState = {
-  selectBox: string;
-};
-export default class ClassComp extends Component<any, selesctState> {
+import "./ClassComp.css";
+import jsonData from "../../list.json";
+
+export class ClassComp extends Component<any, selectState> {
   constructor(props: any) {
     super(props);
     this.state = {
       selectBox: "",
+      text: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(event: any) {
     this.setState({ selectBox: event.target.value });
+    this.setState({ text: true });
   }
   renderHandle = (result: any) => {
-    if (result === "classOne") {
-      return <ClassOne />;
+    if (result === "") {
+      return null;
+    } else if (result === "CheckboxExample") {
+      return <CheckboxExample />;
     } else {
-      return <ClassTwo />;
+      return <TodoApp />;
     }
   };
   render() {
+    const { selectBox, text } = this.state;
     return (
       <div>
-        <label>Select Class:</label>
-        <select value={this.state.selectBox} onChange={this.handleChange}>
-          <option>--select--</option>
-          <option value="classOne">ClassOne</option>
-          <option value="classTwo">ClassTwo</option>
+        <label>Select Class Examples:</label>
+        <select value={selectBox} onChange={this.handleChange}>
+          <option value="">--select--</option>
+          <option value="CheckboxExample">CheckboxExample</option>
+          <option value="TodoApp">TodoApp</option>
         </select>
-        {this.renderHandle(this.state.selectBox)}
+        {text && this.renderHandle(selectBox)}
+        <SelectDropdown />
       </div>
     );
   }
 }
 
-class ClassOne extends Component {
-  componentDidMount() {
-    console.log("classOne Mounted..!!");
-  }
-  componentWillUnmount() {
-    console.log("classOne UnMounted...");
-  }
-  render() {
-    return <div>Class One</div>;
-  }
-}
+type Select = {
+  countries: Array<string>;
+  dropdown: boolean;
+};
+class SelectDropdown extends Component<any, Select> {
+  state = {
+    countries: [],
+    dropdown: true,
+  };
 
-class ClassTwo extends Component {
-  componentDidMount() {
-    console.log("classTwo Mounted..!!");
-  }
-  componentWillUnmount() {
-    console.log("classTwo UnMounted...");
-  }
   render() {
-    return <div>Class Two</div>;
+    return (
+      <div>
+        <div>
+          <label>Select Countries:</label>
+          <select>
+            <option>--select--</option>
+            {jsonData.countries.map((item, i) => {
+              return <option key={i}>{item}</option>;
+            })}
+          </select>
+        </div>
+        <div>
+          <label>Select States:</label>
+          <select disabled={this.state.dropdown}>
+            <option>AP</option>
+          </select>
+        </div>
+      </div>
+    );
   }
 }
