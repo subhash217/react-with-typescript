@@ -12,7 +12,7 @@ export const myContext = React.createContext({
   age: 28,
   company: "Infy",
 });
-console.log(myContext);
+// console.log(myContext);
 console.log(process.env.NODE_ENV);
 
 function initialSetup() {
