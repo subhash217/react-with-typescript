@@ -9,6 +9,18 @@
 .navbar-container .image {
   width: 4%;
 }
+
+.navbar-container .active-navBar {
+  text-decoration: none;
+  color: #fff;
+  border-bottom-color: #fff;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+}
+
+.header-label {
+  color: #fff;
+}
 .search-input {
   height: 23px;
   width: 43.7%;
@@ -107,7 +119,7 @@ img:hover {
     width: 4%;
   }
 }
-
+/* mobile-view (375px to 425px) */
 @media only screen and (max-width: 425px) {
   .content p {
     display: none;

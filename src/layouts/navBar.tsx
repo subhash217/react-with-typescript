@@ -1,17 +1,30 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./navBar.css";
 const NavBar = () => {
   const dropBox = React.useRef<HTMLDivElement>(null);
+  const [state, setState] = React.useState([]);
   console.log(dropBox.current);
   const dropDown = () => {
     console.log(dropBox.current);
+  };
+
+  const handleChange = (event: any) => {
+    setState(event.target.value);
+  };
+
+  const pressChange = (event: any) => {
+    const input = event.target.value;
+    fetch(`https://jsonplaceholder.typicode.com/users?name=${input}`)
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
   };
   return (
     <div>
       <div className="navbar-container">
         <div className="menu-icon">
-          <NavLink to="/">
+          <span>
             <svg
               style={{ fill: "#fff" }}
               height="24"
@@ -25,7 +38,7 @@ const NavBar = () => {
                 d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"
               ></path>
             </svg>
-          </NavLink>
+          </span>
         </div>
         <div className="tab-space"></div>
         <div className="image">
@@ -48,31 +61,46 @@ const NavBar = () => {
             type="text"
             className="search-input"
             placeholder="search or jump to ..."
+            value={state}
+            onChange={(event) => handleChange(event)}
+            onKeyPress={pressChange}
           />
-          <p>Pull requests</p>
+          <p>
+            <NavLink
+              to="/crud"
+              style={{ textDecoration: "none" }}
+              activeClassName="active-navBar"
+            >
+              <span className="header-label">CRUD</span>
+            </NavLink>
+          </p>
           <p>
             <NavLink
               to="/redbus"
-              activeStyle={{
-                fontWeight: "bold",
-                color: "red",
-              }}
+              style={{ textDecoration: "none" }}
+              activeClassName="active-navBar"
             >
-              Red Bus
+              <span className="header-label">Red Bus</span>
             </NavLink>
           </p>
           <p>
             <NavLink
               to="/amazon"
-              activeStyle={{
-                fontWeight: "bold",
-                color: "red",
-              }}
+              style={{ textDecoration: "none" }}
+              activeClassName="active-navBar"
             >
-              Amazon
+              <span className="header-label">Amazon</span>
             </NavLink>
           </p>
-          <p>Facebook</p>
+          <p>
+            <NavLink
+              to="/facebook"
+              style={{ textDecoration: "none" }}
+              activeClassName="active-navBar"
+            >
+              <span className="header-label">Facebook</span>
+            </NavLink>
+          </p>
         </div>
         <div className="empty"></div>
         <div className="login">

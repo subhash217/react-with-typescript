@@ -13,7 +13,7 @@ const Div = styled.div`
   transition: all 0.3s linear;
 `;
 
-export function AmazonHome() {
+export const AmazonHome: React.FunctionComponent = () => {
   const [menu, setMenu] = React.useState([
     "Fresh",
     "Amazon Pay",
@@ -49,6 +49,14 @@ export function AmazonHome() {
           );
         })}
       </div>
+      <div className="demo"></div>
+      <span>Inline Element</span>
+      <ul>
+        <li>virat kohli</li>
+        <li>steve smith</li>
+        <li>kane williamson</li>
+        <li>Joe Root</li>
+      </ul>
     </>
   );
-}
+};
