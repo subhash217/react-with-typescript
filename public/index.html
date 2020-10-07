@@ -15,6 +15,35 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDkK2jVyYWoyPbGoXx8GE6aTJ4Mp2mDPkA",
+        authDomain: "react-crud-87845.firebaseapp.com",
+        databaseURL: "https://react-crud-87845.firebaseio.com",
+        projectId: "react-crud-87845",
+        storageBucket: "react-crud-87845.appspot.com",
+        messagingSenderId: "114710939774",
+        appId: "1:114710939774:web:e15cab6dc0b37180b0702f",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
     <!-- Latest compiled and minified CSS -->
 
     <!-- <script>

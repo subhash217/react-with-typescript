@@ -1,11 +1,34 @@
 import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import NavBar from "./layouts/navBar";
 import { RedbusHome } from "./webApps/RedbusUI/Home";
 import { AmazonHome } from "./webApps/AmazonUI/Body";
+import FacebookHome from "./webApps/FacebookUI/Body";
+import AddDetails from "./components/CRUD/AddDetails";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: "https://jsonplaceholder.typicode.com/users",
+  cache: new InMemoryCache(),
+});
+console.log(client);
+client
+  .query({
+    query: gql`
+      query {
+        id
+        name
+        username
+        email
+      }
+    `,
+  })
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
 
 export const myContext = React.createContext({
   name: "subash",
@@ -19,15 +42,14 @@ function initialSetup() {
   return (
     <React.StrictMode>
       <BrowserRouter>
-        <App name="subash" age={28} />
+        <NavBar />
+
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => <h1>No Apps Available please use Nav Menu</h1>}
-          />
+          <Route exact path="/" render={() => <App name="subash" age={28} />} />
           <Route path="/redbus" component={RedbusHome} />
           <Route path="/amazon" component={AmazonHome} />
+          <Route path="/facebook" component={FacebookHome} />
+          <Route path="/crud" component={AddDetails} />
         </Switch>
       </BrowserRouter>
     </React.StrictMode>
