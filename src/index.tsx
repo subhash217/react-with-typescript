@@ -1,13 +1,15 @@
 import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import NavBar from "./layouts/navBar";
-import { RedbusHome } from "./webApps/RedbusUI/Home";
-import { AmazonHome } from "./webApps/AmazonUI/Body";
-import FacebookHome from "./webApps/FacebookUI/Body";
-import AddDetails from "./components/CRUD/AddDetails";
-import "./index.css";
-import App from "./App";
+import Login from "./components/Login/Login";
+import Dashboard from "./components/Dashboard/Dashboard";
+// import NavBar from "./layouts/navBar";
+// import { RedbusHome } from "./webApps/RedbusUI/Home";
+// import { AmazonHome } from "./webApps/AmazonUI/Body";
+// import FacebookHome from "./webApps/FacebookUI/Body";
+// import AddDetails from "./components/CRUD/AddDetails";
+// import "./index.css";
+// import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
@@ -42,14 +44,11 @@ function initialSetup() {
   return (
     <React.StrictMode>
       <BrowserRouter>
-        <NavBar />
+        {/* <NavBar /> */}
 
         <Switch>
-          <Route exact path="/" render={() => <App name="subash" age={28} />} />
-          <Route path="/redbus" component={RedbusHome} />
-          <Route path="/amazon" component={AmazonHome} />
-          <Route path="/facebook" component={FacebookHome} />
-          <Route path="/crud" component={AddDetails} />
+          <Route exact path="/" component={Login} />
+          <Route path="/dashboard" component={Dashboard} />
         </Switch>
       </BrowserRouter>
     </React.StrictMode>

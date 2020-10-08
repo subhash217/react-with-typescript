@@ -1,0 +1,9 @@
+{/* <Route
+            exact
+            path="/dashboard"
+            render={() => <App name="subash" age={28} />}
+          />
+          <Route path="/redbus" component={RedbusHome} />
+          <Route path="/amazon" component={AmazonHome} />
+          <Route path="/facebook" component={FacebookHome} />
+          <Route path="/crud" component={AddDetails} /> */}
