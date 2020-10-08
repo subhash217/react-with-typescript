@@ -1,0 +1,38 @@
+.login-container {
+  margin: auto;
+  width: 20%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+
+  .heading {
+    font-size: 19px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    word-spacing: 1px;
+  }
+
+  label {
+    font-size: 17px;
+    font-weight: 500;
+    font-family: sans-serif;
+  }
+
+  .input-field {
+    width: 90%;
+    height: 20px;
+    margin-top: 5px;
+    padding: 5px;
+  }
+
+  .buttons {
+    border: none;
+    padding: 6px;
+    color: #fff;
+    background-color: #2874f0;
+    font-size: 15px;
+    font-family: Roboto, Arial, sans-serif;
+    width: 95%;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}

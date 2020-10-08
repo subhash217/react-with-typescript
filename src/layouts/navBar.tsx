@@ -1,10 +1,15 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Switch, Route } from "react-router-dom";
+import { RedbusHome } from "../webApps/RedbusUI/Home";
+import { AmazonHome } from "../webApps/AmazonUI/Body";
+import FacebookHome from "../webApps/FacebookUI/Body";
+import AddDetails from "../components/CRUD/AddDetails";
 import "./navBar.css";
-const NavBar = () => {
+const NavBar: React.FunctionComponent = (props: any) => {
   const dropBox = React.useRef<HTMLDivElement>(null);
   const [state, setState] = React.useState([]);
   console.log(dropBox.current);
+  console.log(props);
   const dropDown = () => {
     console.log(dropBox.current);
   };
@@ -67,7 +72,7 @@ const NavBar = () => {
           />
           <p>
             <NavLink
-              to="/crud"
+              to={`${props.match.url}/crud`}
               style={{ textDecoration: "none" }}
               activeClassName="active-navBar"
             >
@@ -76,7 +81,7 @@ const NavBar = () => {
           </p>
           <p>
             <NavLink
-              to="/redbus"
+              to={`${props.match.url}/redbus`}
               style={{ textDecoration: "none" }}
               activeClassName="active-navBar"
             >
@@ -85,7 +90,7 @@ const NavBar = () => {
           </p>
           <p>
             <NavLink
-              to="/amazon"
+              to={`${props.match.url}/amazon`}
               style={{ textDecoration: "none" }}
               activeClassName="active-navBar"
             >
@@ -94,7 +99,7 @@ const NavBar = () => {
           </p>
           <p>
             <NavLink
-              to="/facebook"
+              to={`${props.match.url}/facebook`}
               style={{ textDecoration: "none" }}
               activeClassName="active-navBar"
             >
@@ -151,6 +156,12 @@ const NavBar = () => {
           </div>
         </div>
       </div>
+      <Switch>
+        <Route path={`${props.match.path}/redbus`} component={RedbusHome} />
+        <Route path={`${props.match.path}/amazon`} component={AmazonHome} />
+        <Route path={`${props.match.path}/facebook`} component={FacebookHome} />
+        <Route path={`${props.match.path}/crud`} component={AddDetails} />
+      </Switch>
     </div>
   );
 };
