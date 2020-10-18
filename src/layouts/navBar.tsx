@@ -1,18 +1,15 @@
 import React from "react";
 import { NavLink, Switch, Route } from "react-router-dom";
+import Avatar from "./Avatar";
 import { RedbusHome } from "../webApps/RedbusUI/Home";
 import { AmazonHome } from "../webApps/AmazonUI/Body";
 import FacebookHome from "../webApps/FacebookUI/Body";
 import AddDetails from "../components/CRUD/AddDetails";
 import "./navBar.css";
 const NavBar: React.FunctionComponent = (props: any) => {
-  const dropBox = React.useRef<HTMLDivElement>(null);
   const [state, setState] = React.useState([]);
-  console.log(dropBox.current);
+
   console.log(props);
-  const dropDown = () => {
-    console.log(dropBox.current);
-  };
 
   const handleChange = (event: any) => {
     setState(event.target.value);
@@ -140,20 +137,7 @@ const NavBar: React.FunctionComponent = (props: any) => {
               ></path>
             </svg>
           </div>
-          <div>
-            <img
-              src={"https://avatars2.githubusercontent.com/u/31888467?s=60&v=4"}
-              width="20"
-              height="20"
-              alt="sub"
-              onClick={dropDown}
-            />
-            <div ref={dropBox} id="myDropdown" className="dropdown-content">
-              <p>Home</p>
-              <p>About</p>
-              <p>Contact</p>
-            </div>
-          </div>
+          <Avatar />
         </div>
       </div>
       <Switch>

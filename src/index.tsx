@@ -1,15 +1,12 @@
 import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./Store/store";
 import Login from "./components/Login/Login";
 import Dashboard from "./components/Dashboard/Dashboard";
-// import NavBar from "./layouts/navBar";
-// import { RedbusHome } from "./webApps/RedbusUI/Home";
-// import { AmazonHome } from "./webApps/AmazonUI/Body";
-// import FacebookHome from "./webApps/FacebookUI/Body";
-// import AddDetails from "./components/CRUD/AddDetails";
-// import "./index.css";
-// import App from "./App";
+import Register from "./components/Register/register";
+
 import * as serviceWorker from "./serviceWorker";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
@@ -43,14 +40,17 @@ console.log(process.env.NODE_ENV);
 function initialSetup() {
   return (
     <React.StrictMode>
-      <BrowserRouter>
-        {/* <NavBar /> */}
-
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route path="/dashboard" component={Dashboard} />
-        </Switch>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/register">
+              <Register />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </Provider>
     </React.StrictMode>
   );
 }

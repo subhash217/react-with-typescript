@@ -1,0 +1,25 @@
+.social-container {
+  margin-top: 40px;
+  width: 95%;
+  border-top: 1px solid black;
+  .google {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 42%;
+    padding: 5px;
+    cursor: pointer;
+    .google-button {
+      margin-bottom: 9px;
+      font-size: 16px;
+      margin-left: 4px;
+    }
+  }
+
+  .facebook {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 45%;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
